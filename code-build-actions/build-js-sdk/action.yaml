@@ -56,6 +56,14 @@ runs:
       working-directory: ${{inputs.sdk_output_directory}}/src
       run: |
         rm -rf openapitools.json templates-js .openapi-generator-ignore .openapi-generator git_push.sh
+    - name: Debug Stuff
+      shell: bash
+      working-directory: ${{inputs.sdk_output_directory}}
+      run: |
+        git status
+        pwd
+        ls src/
+        ls .
     - name: Commit SDK changes to the PR
       uses: EndBug/add-and-commit@v9
       if: ${{ inputs.dry-run != 'true' }}
