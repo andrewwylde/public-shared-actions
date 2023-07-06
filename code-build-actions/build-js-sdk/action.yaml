@@ -57,6 +57,7 @@ runs:
       run: |
         rm -rf openapitools.json templates-js .openapi-generator-ignore .openapi-generator git_push.sh
     - name: Debug Stuff
+      shell: bash
       run: |
         git status
         pwd
